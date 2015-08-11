@@ -55,7 +55,7 @@
 
                     modal.fadeTo(200, 1);
 
-                    modal.trigger('modalopened')
+                    modal.trigger('modalopen')
 
                     e.preventDefault();
 
