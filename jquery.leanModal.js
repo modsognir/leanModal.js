@@ -5,7 +5,6 @@
         leanModal: function(options) {
 
             var defaults = {
-                top: 100,
                 overlay: 0.5,
                 closeButton: null
             }
@@ -42,19 +41,20 @@
 
                     $('#lean_overlay').fadeTo(200, o.overlay);
 
-                    $(modal_id).css({
-
+                    var css = $.extend({
                         'display': 'block',
                         'position': 'fixed',
                         'opacity': 0,
+                        'margin-left': -(modal_width / 2) + "px",
                         'z-index': 11000,
                         'left': 50 + '%',
-                        'margin-left': -(modal_width / 2) + "px",
-                        'top': o.top + "px"
+                        'top': '100px'
+                    }, o.css)
 
-                    });
+                    modal.css(css);
 
-                    $(modal_id).fadeTo(200, 1);
+                    modal.fadeTo(200, 1);
+
 
                     e.preventDefault();
 
