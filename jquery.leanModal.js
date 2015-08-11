@@ -22,18 +22,18 @@
 
                 $(this).click(function(e) {
 
-                    var modal_id = $(this).attr("href");
+                    var modal = $($(this).attr("href"));
 
                     $("#lean_overlay").click(function() {
-                        close_modal(modal_id);
+                        close_modal(modal);
                     });
 
                     $(o.closeButton).click(function() {
-                        close_modal(modal_id);
+                        close_modal(modal);
                     });
 
-                    var modal_height = $(modal_id).outerHeight();
-                    var modal_width = $(modal_id).outerWidth();
+                    var modal_height = modal.outerHeight();
+                    var modal_width = modal.outerWidth();
 
                     $('#lean_overlay').css({
                         'display': 'block',
@@ -62,11 +62,11 @@
 
             });
 
-            function close_modal(modal_id) {
+            function close_modal(modal) {
 
                 $("#lean_overlay").fadeOut(200);
 
-                $(modal_id).css({
+                modal.css({
                     'display': 'none'
                 });
 
